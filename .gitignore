@@ -1,0 +1,3 @@
+/roles/useradd/files/id_rsa/
+/roles/useradd/vars/main.yml
+/roles/chatwork/vars/main.yml
