@@ -1,0 +1,49 @@
+---
+- name: php Install
+  sudo: yes
+  yum: name={{ item }} state=present disablerepo=epel,remi,rpmforge
+  with_items:
+    - php
+    - php-devel
+    - php-gd
+    - php-mbstring
+    - php-pear
+    - php-bcmath
+    - php-mysql
+    - php-pdo
+    - php-pecl-apc
+
+- name: php php.ini configuration
+  sudo: yes
+  lineinfile: >-
+    dest=/etc/php.ini
+    state=present
+    regexp='{{ item.regexp }}'
+    line='{{ item.line }}'
+  with_items:
+    - regexp: '^;?output_handler.*'
+      line:   'output_handler = mb_output_handler'
+    - regexp: '^;?default_charset.*'
+      line:   'default_charset = "UTF-8"'
+    - regexp: '^;?date.timezone.*'
+      line:   'date.timezone = "Asia/Tokyo'
+    - regexp: '^;?mbstring.language.*'
+      line:   'mbstring.language = Japanese'
+    - regexp: '^;?mbstring.internal_encoding.*'
+      line:   'mbstring.internal_encoding = UTF-8'
+    - regexp: '^;?mbstring.http_input.*'
+      line:   'mbstring.http_input = pass'
+    - regexp: '^;?mbstring.http_output.*'
+      line:   'mbstring.http_output = UTF-8'
+    - regexp: '^;?mbstring.encoding_translation.*'
+      line:   'mbstring.encoding_translation = Off'
+    - regexp: '^;?mbstring.substitute_character.*'
+      line:   'mbstring.substitute_character = none'
+    - regexp: '^;?short_open_tag.*'
+      line:   'short_open_tag = Off'
+    - regexp: '^;?include_path = "\.:.*'
+      line:   'include_path = ".:/usr/lib/php:/usr/share/pear"'
+    - regexp: '^;?max_input_vars.*'
+      line:   'max_input_vars = 10000'
+    - regexp: ''
+      line:   'max_input_vars = 10000'

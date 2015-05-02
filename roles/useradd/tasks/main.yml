@@ -1,0 +1,32 @@
+---
+- name: "useradd addition"
+  sudo: yes
+  user: name="{{ item.name }}" password="{{ item.pw }}" state=present
+  with_items: users
+
+- name: "useradd set authorized_keys"
+  sudo: yes
+  authorized_key:
+    user="{{ item.name }}"
+    key="{{ lookup('file', item.id_rsa_pub) }}"
+    state=present
+  with_items: users
+
+- name: "useradd set id_rsa"
+  sudo: yes
+  copy:
+    src="{{ item.id_rsa }}"
+    dest="~{{ item.name }}/.ssh/id_rsa"
+    force=no
+    backup=yes
+    owner="{{ item.name }}"
+    group="{{ item.name }}"
+    mode=0600
+  with_items: users
+
+- name: "useradd set group"
+  sudo: yes
+  command: "gpasswd -a {{ item.0.name }} {{ item.1 }}"
+  with_subelements:
+    - users
+    - group

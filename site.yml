@@ -1,0 +1,11 @@
+---
+- name: all
+  hosts: all
+  sudo: no
+  roles:
+    - { role: check,    tags: ['check'] }
+    - { role: useradd,  tags: ['useradd'] }
+    - { role: chatwork, tags: ['chatwork'] }
+    - { role: yum-repo, tags: ['yum-repo'] }
+    - { role: php,      tags: ['php'] }
+    - { role: php-fpm,  tags: ['php-fpm'] }

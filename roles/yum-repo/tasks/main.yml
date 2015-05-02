@@ -1,0 +1,14 @@
+---
+- name: yum-repo Install
+  sudo: yes
+  yum: name={{item}} state=present
+  with_items: repo_url
+
+- name: yum-repo default disable
+  sudo: yes
+  lineinfile: >-
+    dest={{item}}
+    state=present
+    regexp="^#?enabled.*?=.*"
+    line="enabled = 0"
+  with_items: repo_path

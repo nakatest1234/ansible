@@ -1,0 +1,5 @@
+---
+- name: Install php-pecl-memcached
+  yum: name={{ item }} state=present enablerepo=epel disablerepo=remi
+  with_items:
+    - php-pecl-memcached

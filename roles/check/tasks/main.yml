@@ -1,0 +1,3 @@
+---
+- name: "check ip4"
+  command: echo {{ ansible_eth0.ipv4.address }}
