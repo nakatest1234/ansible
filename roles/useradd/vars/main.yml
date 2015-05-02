@@ -1,0 +1,10 @@
+---
+### user settings file
+# openssl passwd -1
+users:
+  - name:       ambient2step
+    pw:         'PASSWORD'
+    id_rsa_pub: id_rsa/ambient2step/id_rsa.pub
+    id_rsa:     id_rsa/ambient2step/id_rsa_np
+    group:
+      - wheel

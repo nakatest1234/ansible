@@ -1,0 +1,7 @@
+---
+api: "https://api.chatwork.com/v1/rooms"
+token: ""
+rooms:
+  test:
+    id:  ""
+    msg: "【自動送信】exec done by ansible."
