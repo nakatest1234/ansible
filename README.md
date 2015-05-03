@@ -8,6 +8,7 @@
 | ---- | -------- |
 | check | ip確認 |
 | useradd | ユーザー追加。group, 秘密鍵送信, authorized_keys設定 |
+| init | 初期設定。JST, logrotate(ext), yum(sysstat,wget,yum-utils) |
 | chatwork | チャットワーク通知する。-e "chatwork="で設定ファイルのキー名を指定 |
 | yum-repo | epel, remi, rpmforgeを追加する。enabled=0に設定 |
 | php | php周り全般。apcも入る |
