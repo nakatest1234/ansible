@@ -4,6 +4,7 @@
   sudo: no
   roles:
     - { role: check,    tags: ['check'] }
+    - { role: init,     tags: ['init'] }
     - { role: useradd,  tags: ['useradd'] }
     - { role: chatwork, tags: ['chatwork'] }
     - { role: yum-repo, tags: ['yum-repo'] }

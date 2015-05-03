@@ -1,0 +1,7 @@
+yum_list:
+  - sysstat
+  #- iotop
+  - wget
+  - yum-utils
+
+timezone: /usr/share/zoneinfo/Asia/Tokyo

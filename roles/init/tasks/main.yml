@@ -1,0 +1,25 @@
+---
+- name: init Install
+  sudo: yes
+  yum: name={{item}} state=present
+  with_items: yum_list
+
+- name: init Set Asia/Tokyo
+  sudo: yes
+  file: src={{ timezone }} dest=/etc/localtime state=link force=yes mode='u=rw,go=r'
+  notify: restart crond
+
+- name: init Set logrotate format
+  sudo: yes
+  lineinfile: >-
+    dest=/etc/logrotate.conf
+    regexp='^#?dateext|^#?nodateext'
+    line='nodateext'
+
+- name: init Set cloud.cfg
+  sudo: yes
+  lineinfile: >-
+    dest=/etc/cloud/cloud.cfg
+    regexp='^repo_upgrade.*'
+    line='repo_upgrade: none'
+  when: ansible_distribution == 'Amazon'
