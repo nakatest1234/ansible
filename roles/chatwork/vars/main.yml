@@ -3,6 +3,6 @@
 #api: "https://api.chatwork.com/v1/rooms"
 #token: ""
 #rooms:
-#  test:
+#  default:
 #    id:  ""
 #    msg: "【自動送信】exec done by ansible."
