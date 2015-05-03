@@ -1,7 +1,8 @@
 ---
-api: "https://api.chatwork.com/v1/rooms"
-token: ""
-rooms:
-  test:
-    id:  ""
-    msg: "【自動送信】exec done by ansible."
+### notify.ymlに下記形式で書きだす(git管理上)
+#api: "https://api.chatwork.com/v1/rooms"
+#token: ""
+#rooms:
+#  test:
+#    id:  ""
+#    msg: "【自動送信】exec done by ansible."

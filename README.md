@@ -20,7 +20,7 @@ ansible-playbook -i hosts -l <host,group> -t useradd site.yml
 ansible-playbook -i hosts -l <host,group> -t chatwork site.yml -k
 ```
 
-チャットワークに通知する+room指定
+チャットワークに通知する + chatworkのグループ指定
 ```
-ansible-playbook -i hosts -l <host,group> -t chatwork site.yml -e "room_name=hogehoge"
+ansible-playbook -i hosts -l <host,group> -t chatwork site.yml -e "chatwork=hogehoge"
 ```

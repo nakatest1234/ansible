@@ -1,6 +1,8 @@
 ---
+- include_vars: notify.yml
+
 - name: "chatwork notify"
   ignore_errors: yes
   local_action: command /usr/bin/curl -X POST -H "X-ChatWorkToken"{{colon}}" "{{token}}"" "{{ api }}"/"{{ item.value.id }}"/messages -d "body={{item.value.msg}}"
-  when: item.key == room_name | default("default")
+  when: item.key == chatwork | default("default")
   with_dict: rooms
