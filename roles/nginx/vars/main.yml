@@ -26,12 +26,6 @@ set_conf:
     mode:      u=rwx,go=rx
     file:      basic_auth
     file_mode: u=rw,go=r
-  #- dir:       /home/webroot/elb
-  #  owner:     nginx
-  #  group:     nginx
-  #  mode:      ug=rwx,o=rx
-  #  file:      ''
-  #  file_mode: ug=rw,o=r
   - dir:       /home/webroot/elb/htdocs
     owner:     nginx
     group:     wheel
