@@ -7,5 +7,4 @@
 #    pw:         'PASSWORD'
 #    id_rsa_pub: id_rsa/ambient2step/id_rsa.pub
 #    id_rsa:     id_rsa/ambient2step/id_rsa
-#    group:
-#      - wheel
+#    group:      ['wheel']
