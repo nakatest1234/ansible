@@ -5,7 +5,7 @@ php_ini:
   - regexp: '^;?default_charset.*'
     line:   'default_charset = "UTF-8"'
   - regexp: '^;?date.timezone.*'
-    line:   'date.timezone = "Asia/Tokyo'
+    line:   'date.timezone = "Asia/Tokyo"'
   - regexp: '^;?mbstring.language.*'
     line:   'mbstring.language = Japanese'
   - regexp: '^;?mbstring.internal_encoding.*'
