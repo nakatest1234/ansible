@@ -1,4 +1,6 @@
 ---
+- include_vars: user.yml
+
 - name: "useradd addition"
   sudo: yes
   user: name="{{ item.name }}" password="{{ item.pw }}" state=present

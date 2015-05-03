@@ -1,4 +1,4 @@
 /roles/useradd/files/id_rsa/
-/roles/useradd/vars/main.yml
+/roles/useradd/vars/user.yml
 /roles/chatwork/vars/notify.yml
 /hosts
