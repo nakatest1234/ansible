@@ -9,3 +9,4 @@
     - { role: yum-repo, tags: ['yum-repo'] }
     - { role: php,      tags: ['php'] }
     - { role: php-fpm,  tags: ['nginx'] }
+    - { role: php-pecl-memcached, tags: ['php-pecl-memcached'] }
