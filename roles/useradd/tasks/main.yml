@@ -23,7 +23,7 @@
     backup=yes
     owner="{{ item.name }}"
     group="{{ item.name }}"
-    mode=0600
+    mode='u=rw,go='
   with_items: users
 
 - name: "useradd set group"
