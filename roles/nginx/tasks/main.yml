@@ -1,0 +1,57 @@
+---
+- name: nginx Install repo
+  sudo: yes
+  yum: name={{ item }}
+  with_items: repo_url
+
+- name: nginx Install
+  sudo: yes
+  yum: name={{ item }} state=present disablerepo=* enablerepo=nginx
+  with_items:
+    - nginx
+
+- name: nginx Delete default
+  sudo: yes
+  ignore_errors: yes
+  file: >-
+    path={{ item }}
+    state=absent
+  with_items:
+    - /etc/nginx/conf.d/default.conf
+    - /etc/nginx/conf.d/example_ssl.conf
+
+- name: nginx Make Direcotry
+  sudo: yes
+  file: >-
+    path={{ item.dir }}
+    state=directory
+    owner={{ item.owner }}
+    group={{ item.group }}
+    mode={{ item.mode }}
+  with_items: set_conf
+
+- name: nginx Set File
+  sudo: yes
+  template: >-
+    src={{ item.file }}
+    dest="{{ item.dir }}/{{ item.file }}"
+    mode={{ item.file_mode }}
+  when: item.file != ''
+  with_items: set_conf
+  notify: restart nginx
+
+- name: nginx Set Touchfule
+  sudo: yes
+  file: >-
+    path={{ item.file }}
+    state=touch
+    owner={{ item.owner }}
+    group={{ item.group }}
+    mode={{ item.file_mode }}
+  with_items: touch_file
+
+- name: nginx Set logrotate
+  sudo: yes
+  template: >-
+    src=logrotate
+    dest=/etc/logrotate.d/nginx

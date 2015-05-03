@@ -1,16 +1,11 @@
 ---
-- name: Install php-fpm and deps 
+- name: php-pfm Install
   sudo: yes
-  yum: name={{ item }} state=present disablerepo=epel,remi
+  yum: name={{ item }} state=present disablerepo=epel,remi,rpmforge
   with_items:
     - php-fpm
 
-- name: Disable default pool
+- name: php-fpm Set www.conf
   sudo: yes
-  command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
-  notify: restart php-fpm
- 
-- name: Copy php-fpm configuration
-  sudo: yes
-  template: src=wordpress.conf dest=/etc/php-fpm.d/
+  template: src=www.conf dest=/etc/php-fpm.d/
   notify: restart php-fpm

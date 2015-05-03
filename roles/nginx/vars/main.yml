@@ -1,0 +1,59 @@
+---
+repo_url:
+  - http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
+set_conf:
+  - dir:       /etc/nginx
+    owner:     root
+    group:     root
+    mode:      u=rwx,go=rx
+    file:      nginx.conf
+    file_mode: u=rw,go=r
+  - dir:       /etc/nginx/conf.d
+    owner:     root
+    group:     root
+    mode:      u=rwx,go=rx
+    file:      elb.conf
+    file_mode: u=rw,go=r
+  - dir:       /etc/nginx/conf.d/common
+    owner:     root
+    group:     root
+    mode:      u=rwx,go=rx
+    file:      drop.conf
+    file_mode: u=rw,go=r
+  - dir:       /etc/nginx/conf.d/common
+    owner:     root
+    group:     root
+    mode:      u=rwx,go=rx
+    file:      basic_auth
+    file_mode: u=rw,go=r
+  #- dir:       /home/webroot/elb
+  #  owner:     nginx
+  #  group:     nginx
+  #  mode:      ug=rwx,o=rx
+  #  file:      ''
+  #  file_mode: ug=rw,o=r
+  - dir:       /home/webroot/elb/htdocs
+    owner:     nginx
+    group:     wheel
+    mode:      ug=rwx,o=rx
+    file:      ''
+    file_mode: ug=rw,o=r
+  - dir:       /home/webroot/elb/logs
+    owner:     root
+    group:     wheel
+    mode:      u=rwx,go=rx
+    file:      ''
+    file_mode: ug=rw,o=r
+touch_file:
+  - file:      /home/webroot/elb/logs/access.log
+    owner:     root
+    group:     wheel
+    file_mode: u=rw,g=r,o=
+  - file:      /home/webroot/elb/logs/error.log
+    owner:     root
+    group:     wheel
+    file_mode: u=rw,g=r,o=
+  - file:      /etc/nginx/conf.d/common/basic.htpasswd
+    owner:     root
+    group:     root
+    file_mode: u=rw,go=r

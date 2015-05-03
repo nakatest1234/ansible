@@ -8,4 +8,4 @@
     - { role: chatwork, tags: ['chatwork'] }
     - { role: yum-repo, tags: ['yum-repo'] }
     - { role: php,      tags: ['php'] }
-    - { role: php-fpm,  tags: ['php-fpm'] }
+    - { role: php-fpm,  tags: ['nginx'] }
