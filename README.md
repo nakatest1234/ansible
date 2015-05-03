@@ -8,7 +8,7 @@
 | check | ip確認 |
 | useradd | ユーザー追加。group, 秘密鍵送信, authorized_keys設定 |
 | chatwork | チャットワーク通知する。-e "chatwork="で設定ファイルのキー名を指定 |
-| yum-repo | epel, remi, rpmforgeを追加する。enable=0に設定 |
+| yum-repo | epel, remi, rpmforgeを追加する。enabled=0に設定 |
 | php | php周り全般。apcも入る |
 | php-pecl-memcached | phpからmemcached操作する時入れる |
 | nginx | nginxを入れる。php, php-fpmも入る。 |
