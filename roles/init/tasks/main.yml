@@ -4,7 +4,7 @@
   yum: name={{item}} state=present
   with_items: yum_list
 
-- name: init Set Asia/Tokyo
+- name: init Set TimeZone
   sudo: yes
   file: src={{ timezone }} dest=/etc/localtime state=link force=yes mode='u=rw,go=r'
   notify: restart crond
