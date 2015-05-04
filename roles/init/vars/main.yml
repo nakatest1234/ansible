@@ -3,5 +3,6 @@ yum_list:
   #- iotop
   - wget
   - yum-utils
+  - git
 
 timezone: /usr/share/zoneinfo/Asia/Tokyo
