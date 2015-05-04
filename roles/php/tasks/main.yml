@@ -15,9 +15,5 @@
 
 - name: php php.ini configuration
   sudo: yes
-  lineinfile: >-
-    dest=/etc/php.ini
-    state=present
-    regexp='{{ item.regexp }}'
-    line='{{ item.line }}'
+  lineinfile: dest=/etc/php.ini state=present line='{{ item.line }}'
   with_items: php_ini
