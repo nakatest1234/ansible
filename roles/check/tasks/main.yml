@@ -1,3 +1,7 @@
 ---
 - name: "check ip4"
-  command: echo {{ ansible_eth0.ipv4.address }}
+  debug: msg="{{ item }}"
+  with_items: ansible_all_ipv4_addresses
+
+- name: "check date"
+  debug: msg='{{ ansible_date_time.date }} {{ ansible_date_time.time }} {{ ansible_date_time.tz }}'

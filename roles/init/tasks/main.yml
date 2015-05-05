@@ -23,3 +23,13 @@
     regexp='^repo_upgrade.*'
     line='repo_upgrade: none'
   when: ansible_distribution == 'Amazon'
+
+- name: init CommentOut net.bridge.bridge-nf-call-*
+  sudo: yes
+  replace: dest=/etc/sysctl.conf regexp='^net.bridge.bridge-nf-call-' replace='#net.bridge.bridge-nf-call-'
+
+- name: init Set Sysctl
+  sudo: yes
+  sysctl: name='{{item.key}}' value='{{item.value}}' state=present reload=yes
+  with_dict: sysctl
+
