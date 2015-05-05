@@ -35,4 +35,4 @@
 
 - name: init Set visudo template
   sudo: yes
-  template: src=vm-init dest=/etc/sudoers.d/vm-init mode='ug=r,o='
+  template: src=wheel-init dest=/etc/sudoers.d/wheel-init mode='ug=r,o='
