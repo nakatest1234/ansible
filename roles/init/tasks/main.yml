@@ -33,3 +33,6 @@
   sysctl: name='{{item.key}}' value='{{item.value}}' state=present reload=yes
   with_dict: sysctl
 
+- name: init Set visudo template
+  sudo: yes
+  template: src=vm-init dest=/etc/sudoers.d/vm-init mode='ug=r,o='
