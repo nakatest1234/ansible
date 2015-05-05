@@ -3,6 +3,7 @@
   sudo: yes
   yum: name={{item}} state=present
   with_items: repo_url
+  when: ansible_distribution != 'Amazon'
 
 - name: yum-repo default disable
   sudo: yes
@@ -12,3 +13,4 @@
     regexp="^#?enabled.*?=.*"
     line="enabled = 0"
   with_items: repo_path
+  when: ansible_distribution != 'Amazon'

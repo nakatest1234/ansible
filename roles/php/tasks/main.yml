@@ -1,7 +1,7 @@
 ---
 - name: php Install
   sudo: yes
-  yum: name={{ item }} state=present disablerepo=epel,remi,rpmforge
+  yum: name={{ item }} state=present disablerepo=epel
   with_items:
     - php
     - php-devel
