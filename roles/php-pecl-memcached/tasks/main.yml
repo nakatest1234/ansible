@@ -1,5 +1,14 @@
 ---
-- name: Install php-pecl-memcached
-  yum: name={{ item }} state=present enablerepo=epel disablerepo=remi
+- name: Install php-pecl-memcached(CentOS)
+  sudo: yes
+  yum: name={{ item }} state=present enablerepo=epel
   with_items:
     - php-pecl-memcached
+  when: ansible_distribution != 'Amazon'
+
+- name: Install php-pecl-memcached(Amazon)
+  sudo: yes
+  yum: name={{ item }} state=present disablerepo=epel
+  with_items:
+    - php-pecl-memcached
+  when: ansible_distribution == 'Amazon'
