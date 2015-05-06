@@ -1,4 +1,4 @@
 ---
 - name: restart crond
   sudo: yes
-  service: name=crond state=restarted
+  service: name=crond state=restarted enabled=yes
