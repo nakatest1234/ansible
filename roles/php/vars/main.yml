@@ -9,7 +9,7 @@ php_ini:
   - regexp: '^;?mbstring.language.*'
     line:   'mbstring.language = Japanese'
   - regexp: '^;?mbstring.internal_encoding.*'
-    line:   'mbstring.internal_encoding. = UTF-8'
+    line:   'mbstring.internal_encoding = UTF-8'
   - regexp: '^;?mbstring.http_input.*'
     line:   'mbstring.http_input = pass'
   - regexp: '^;?mbstring.http_output.*'
@@ -26,4 +26,3 @@ php_ini:
     line:   'max_input_vars = 10000'
   - regexp: ''
     line:   'max_input_vars = 10000'
-
