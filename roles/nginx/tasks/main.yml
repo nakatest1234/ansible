@@ -55,3 +55,11 @@
   template: >-
     src=logrotate
     dest=/etc/logrotate.d/nginx
+  when: ansible_distribution != 'Amazon'
+
+- name: nginx Set logrotate
+  sudo: yes
+  template: >-
+    src=logrotate.amzn
+    dest=/etc/logrotate.d/nginx
+  when: ansible_distribution == 'Amazon'
