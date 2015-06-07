@@ -4,6 +4,20 @@
   yum: name={{item}} state=present
   with_items: yum_list
 
+- name: set zone to /etc/sysconfig/clock
+  sudo: yes
+  replace: >
+    dest=/etc/sysconfig/clock
+    regexp='^ZONE=.*'
+    replace='ZONE="{{ zone }}"'
+
+- name: set UTC to /etc/sysconfig/clock
+  sudo: yes
+  replace: >
+    dest=/etc/sysconfig/clock
+    regexp='^UTC=.*'
+    replace='UTC={{ utc }}'
+
 - name: init Set TimeZone
   sudo: yes
   file: src={{ timezone }} dest=/etc/localtime state=link force=yes mode='u=rw,go=r'

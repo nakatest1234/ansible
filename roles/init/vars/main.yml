@@ -6,6 +6,8 @@ yum_list:
   - git
 
 timezone: /usr/share/zoneinfo/Asia/Tokyo
+zone: 'Asia/Tokyo'
+utc: 'true'
 
 sysctl:
   net.core.somaxconn: '4096'
