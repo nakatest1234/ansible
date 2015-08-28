@@ -9,3 +9,7 @@
   sudo: yes
   template: src=www.conf dest=/etc/php-fpm.d/
   notify: restart php-fpm
+
+- name: php-fpm php-fpm.ini configuration for nginx
+  sudo: yes
+  lineinfile: dest=/etc/php-fpm.ini state=present regexp='^;?events.mechanism.*' line='events.mechanism = epoll'
