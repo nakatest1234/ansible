@@ -1,5 +1,7 @@
 ---
 php_ini:
+  - regexp: '^;?expose_php.*'
+    line:   'expose_php = Off'
   - regexp: '^;?output_handler.*'
     line:   'output_handler = mb_output_handler'
   - regexp: '^;?default_charset.*'
