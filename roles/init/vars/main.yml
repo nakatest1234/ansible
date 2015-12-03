@@ -4,6 +4,7 @@ yum_list:
   - wget
   - yum-utils
   - git
+  - tmpwatch
 
 timezone: /usr/share/zoneinfo/Asia/Tokyo
 zone: 'Asia/Tokyo'
