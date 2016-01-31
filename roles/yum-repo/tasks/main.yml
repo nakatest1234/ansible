@@ -1,11 +1,11 @@
 ---
-- name: yum-repo Install
+- name: Install
   sudo: yes
   yum: name={{item}} state=present
   with_items: repo_url
   when: ansible_distribution != 'Amazon'
 
-- name: yum-repo default disable
+- name: SET disanabled
   sudo: yes
   lineinfile: >-
     dest={{item}}

@@ -1,0 +1,75 @@
+---
+packages:
+  CentOS:
+    - php
+    - php-devel
+    - php-gd
+    - php-mbstring
+    - php-pear
+    - php-bcmath
+    - php-mysqlnd
+    - php-pdo
+    - php-pecl-memcached
+    - php-pecl-apcu
+    - php-opcache
+  Amazon:
+    - php56
+    - php56-devel
+    - php56-gd
+    - php56-mbstring
+    #- php56-pear
+    - php56-bcmath
+    - php56-mysqlnd
+    - php56-pdo
+    - php56-pecl-memcached
+    - php56-pecl-apcu
+    - php56-opcache
+php_ini:
+  - section: 'PHP'
+    option:  'expose_php'
+    value:   'OFF'
+  - section: 'PHP'
+    option:  'output_handler'
+    value:   'mb_output_handler'
+  - section: 'PHP'
+    option:  'default_charset'
+    value:   '\"UTF-8\"'
+  - section: 'PHP'
+    option:  'mbstring.language'
+    value:   'Japanese'
+  - section: 'PHP'
+    option:  'mbstring.internal_encoding'
+    value:   'UTF-8'
+  - section: 'PHP'
+    option:  'mbstring.http_input'
+    value:   'pass'
+  - section: 'PHP'
+    option:  'mbstring.http_output'
+    value:   'UTF-8'
+  - section: 'PHP'
+    option:  'mbstring.encoding_translation'
+    value:   'Off'
+  - section: 'PHP'
+    option:  'mbstring.substitute_character'
+    value:   'none'
+  - section: 'PHP'
+    option:  'short_open_tag'
+    value:   'Off'
+  - section: 'PHP'
+    option:  'include_path'
+    value:   '\".:/usr/lib/php:/usr/share/pear\"'
+  #- section: 'PHP'
+  #  option:  'max_execution_time'
+  #  value:   '30'
+  #- section: 'PHP'
+  #  option:  'max_input_time'
+  #  value:   '60'
+  #- section: 'PHP'
+  #  option:  'memory_limit'
+  #  value:   '128M'
+  - section: 'PHP'
+    option:  'max_input_vars'
+    value:   '10000'
+  - section: 'DATE'
+    option:  'date.timezone'
+    value:   '\"Asia/Tokyo\"'

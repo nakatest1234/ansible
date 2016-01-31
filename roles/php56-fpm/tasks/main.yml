@@ -1,0 +1,24 @@
+---
+- name: Install
+  sudo: yes
+  yum: name={{ item }} state=present disablerepo=epel enablerepo=remi,remi-php56
+  with_items:
+    - php-fpm
+  when: ansible_distribution == 'CentOS'
+
+- name: Install
+  sudo: yes
+  yum: name={{ item }} state=present disablerepo=epel
+  with_items:
+    - php56-fpm
+  when: ansible_distribution == 'Amazon'
+
+- name: SET php-fpm.conf
+  sudo: yes
+  lineinfile: dest=/etc/php-fpm.conf state=present regexp='^;?events.mechanism.*' line='events.mechanism = epoll'
+
+- name: SET www.conf
+  sudo: yes
+  template: src=www.conf dest=/etc/php-fpm.d/
+  notify: restart php-fpm
+

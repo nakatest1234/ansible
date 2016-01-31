@@ -8,6 +8,6 @@
     - { role: useradd,  tags: ['useradd'] }
     - { role: chatwork, tags: ['chatwork'] }
     - { role: yum-repo, tags: ['yum-repo'] }
-    - { role: php,      tags: ['php'] }
-    - { role: php-fpm,  tags: ['nginx'] }
-    - { role: php-pecl-memcached, tags: ['php-pecl-memcached'] }
+    - { role: nginx,    tags: ['nginx'] }
+    - { role: php56,      tags: ['php56'] }
+    - { role: php56-fpm,  tags: ['php56-fpm'] }
