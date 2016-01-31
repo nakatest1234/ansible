@@ -11,8 +11,8 @@
 | init | 初期設定。JST, logrotate(ext), yum(sysstat,wget,yum-utils) |
 | chatwork | チャットワーク通知する。-e "chatwork="で設定ファイルのキー名を指定 |
 | yum-repo | epel, remi, rpmforgeを追加する。enabled=0に設定 |
-| php | php周り全般。apcも入る |
-| php-pecl-memcached | phpからmemcached操作する時入れる |
+| php56 | php5.6 |
+| php56-fpm | php-fpmインストール。socketのuser,group指定はnobodyでとりあえず入れるだけ |
 | nginx | nginxを入れる。php, php-fpmも入る。 |
 
 # コマンド
