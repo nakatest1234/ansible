@@ -28,6 +28,12 @@ ansible-playbook -i hosts -l <host,group> -t chatwork site.yml -e "chatwork=hoge
 ```
 *リリース系プレイブックのお供に*
 
+# インベントリファイル指定せずにホストを指定する
+hostname,末尾にカンマ。連続して指定できる
+```
+ansible-playbook --user=ec2-user --private-key=~/ec2-user.pem -i "hostname1,hostname2," -t check site.yml
+```
+
 ## 個人メモ
 構文チェック
 ```
