@@ -10,6 +10,9 @@
     dest=/etc/sysconfig/clock
     regexp='^ZONE=.*'
     replace='ZONE="{{ zone }}"'
+  when:
+    - ansible_distribution == 'CentOS'
+    - ansible_distribution_major_version == '6'
 
 - name: set UTC to /etc/sysconfig/clock
   sudo: yes
@@ -17,11 +20,17 @@
     dest=/etc/sysconfig/clock
     regexp='^UTC=.*'
     replace='UTC={{ utc }}'
+  when:
+    - ansible_distribution == 'CentOS'
+    - ansible_distribution_major_version == '6'
 
 - name: init Set TimeZone
   sudo: yes
   file: src={{ timezone }} dest=/etc/localtime state=link force=yes mode='u=rw,go=r'
   notify: restart crond
+  when:
+    - ansible_distribution == 'CentOS'
+    - ansible_distribution_major_version == '6'
 
 - name: init Set logrotate format
   sudo: yes
