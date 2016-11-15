@@ -2,6 +2,9 @@ repo_url:
   - http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
   - http://mirror.fairway.ne.jp/dag/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
   - http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+repo_url7:
+  - http://mirror.fairway.ne.jp/dag/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+  - http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 repo_path:
   - /etc/yum.repos.d/epel.repo
   - /etc/yum.repos.d/rpmforge.repo

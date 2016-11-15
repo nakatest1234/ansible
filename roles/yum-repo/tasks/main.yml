@@ -3,7 +3,26 @@
   sudo: yes
   yum: name={{item}} state=present
   with_items: repo_url
-  when: ansible_distribution != 'Amazon'
+  when: 
+    - ansible_distribution == "CentOS"
+    - ansible_distribution_major_version == "6"
+
+- name: Install
+  sudo: yes
+  yum: name="{{ item }}" state=present
+  with_items:
+    - epel-release
+  when: 
+    - ansible_distribution == "CentOS"
+    - ansible_distribution_major_version == "7"
+
+- name: Install
+  sudo: yes
+  yum: name={{item}} state=present
+  with_items: repo_url7
+  when: 
+    - ansible_distribution == "CentOS"
+    - ansible_distribution_major_version == "7"
 
 - name: SET disanabled
   sudo: yes
