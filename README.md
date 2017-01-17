@@ -59,3 +59,8 @@ ansible-playbook ... --list-tasks
 ```
 ansible-playbook ... --list-hosts
 ```
+
+コマンド単品
+```
+ansible all --user=ec2-user --private-key=~/ec-user.pem -i "host1,host2," -m shell -a "yum -y update" -s
+```
