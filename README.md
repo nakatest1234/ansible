@@ -63,4 +63,5 @@ ansible-playbook ... --list-hosts
 コマンド単品
 ```
 ansible all --user=ec2-user --private-key=~/ec-user.pem -i "host1,host2," -m shell -a "yum -y update" -s
+ansible all --user=ec2-user --private-key=~/ec-user.pem --inventory-file="host1,host2," --module-name=shell --args="yum -y update" --sudo
 ```
