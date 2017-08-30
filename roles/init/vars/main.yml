@@ -3,6 +3,7 @@ yum_list:
   #- iotop
   - wget
   - yum-utils
+  - yum-plugin-security
   - git
   - tmpwatch
 
