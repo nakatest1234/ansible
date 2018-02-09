@@ -3,6 +3,7 @@ repo_url:
   - http://mirror.fairway.ne.jp/dag/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
   - http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 repo_url7:
+  - epel-release
   - http://mirror.fairway.ne.jp/dag/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
   - http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 repo_path:
